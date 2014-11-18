@@ -1,0 +1,9 @@
+<template name="activityTpl">
+<ul class="list-group">
+    <li class="list-group-item">
+        <a id="{{start}}" href="#" class="activityEvent">{{formatdatetime start}}</a>
+        <p><span class="badge"> {{type}}</span></p>
+        <span class="alert alert-default"><small>{{shorten title 18}}</small></span>
+    </li>
+</ul>
+</template>

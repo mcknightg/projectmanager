@@ -1,0 +1,38 @@
+<template name="projectForm">
+  <div id="example" class="panel">
+    <ol class="breadcrumb shadowed">
+        <li><a href="/">Home</a></li>
+        <li><a href="/projects"><i class="fa fa-cubes"></i> Projects</a></li>
+        <li class="active">{{name}}</li>
+    </ol>
+    {{#if adding_conversation}}
+      {{>conversationDlg}}
+    {{/if}}
+    {{#if addingTask}}
+      {{>calendartask}}
+    {{/if}}
+    {{#if editing_calevent}}
+      {{>calendartask}}
+    {{/if}}
+    {{#if addingTodo}}
+      {{>todoDlg}}
+    {{/if}}
+<div id="projectpanel"  class="panel panel-default shadowed">
+  {{>projectPanelHeading}}
+  <div class="panel-body">
+    <p></p>
+    <hr/>
+     <div class="row">
+         <div class="hidden-sm hidden-xs col-md-3">
+             {{>projectActivityPanel}}
+         </div>
+         <div class="col-md-9">
+             {{>calendar}}
+             {{>conversationList}}
+             {{>todoList}}
+         </div>
+     </div>
+  </div>
+</div>
+  </div>
+</template>

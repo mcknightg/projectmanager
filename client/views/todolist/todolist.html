@@ -1,0 +1,22 @@
+<template name="todoList">
+<div class="todolist hidden-sm hidden-xs col-md-12">
+	<div class="push-down">
+		<h5 class="text-muted"><strong>To Do Items</strong> | <a class="addtodo" href="#">Add a To Do</a></h5>
+	</div>
+			<hr/>
+		<table>		
+		{{#each todos}}
+			<tr class="{{completed}}">
+				<td class="col-md-1"><input class="todochecked " checked="{{completed}}" type="checkbox" name="todochecked"/></td>
+	 			<td class="col-md-2 complete{{completed}}">{{userId}}</td>
+				<td class="col-md-5 complete{{completed}}"><a class="shortennote" href="#">{{shorten note 45}}</a></td>
+				<td class="col-md-2 complete{{completed}}"> {{formatdate dateadded}}</td>
+				<td class="col-md-1"><button class="btn btn-default btn-xs archive"><i class="fa fa-minus-square-o"></i> Archive</button></td>
+			</tr>
+			<tr>
+				<td colspan="5"><hr/></td>
+			</tr>
+		{{/each}}
+		</table>
+</div>
+</template>

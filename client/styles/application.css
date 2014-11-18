@@ -1,0 +1,52 @@
+footer{
+	position:fixed;
+	bottom:15px;
+	left:0px;
+}
+
+.well{
+	margin-left:15px;
+}
+.fa-trash{
+	color:red;
+}
+.main{
+	margin-top:-20px;
+}
+
+.push-bottom{
+	margin-bottom:15px;
+}
+
+.form-group input {
+    width:340px;
+}
+label{
+    text-align: right;
+}
+
+div.shadowed,ol.shadowed{
+	box-shadow: 1px 1px 2px #888888;
+}
+div.jumbotron{
+	background-color: #bf3e11;
+	color:white;
+}
+.login-link-text{
+	color:white;
+}
+input.noborder{
+	border:none;
+
+}
+div.main{
+	border-left: 1px solid lightgray;
+	height:100%;
+}
+.ui-icon-circle-triangle-w{
+    color:white;
+}
+
+note {
+	font-size: 13pt;
+}

@@ -1,0 +1,25 @@
+<template name="sidebar">
+<div class="col-sm-1 col-md-2 col-lg-2 col-xl-1 sidebar hidden-xs hidden-sm" id="sidebar" 
+role="navigation">
+  <ul class="nav nav-sidebar">
+    <li>
+      <a href="{{pathFor 'projects'}}">
+        <i class="fa fa-cubes"></i> Projects
+      </a>
+    </li>
+  	<li>
+      <a href="{{pathFor 'customers'}}">
+        <i class="fa fa-university"></i> Customers
+      </a>
+    </li>
+  {{#if isAdmin}}
+  	<li>
+      <a href="{{pathFor 'archives'}}">
+        <i class="fa fa-database"></i> Archives
+      </a>
+    </li>
+  {{/if}}
+  </ul>
+  {{>chats}}
+</div>
+</template>

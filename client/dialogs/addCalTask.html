@@ -1,0 +1,45 @@
+<template name="calendartask">
+    <div class="modal fade in show" id="addCalTask" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="closetask pull-right" data-dismiss="modal"
+                            aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Edit Calendar Event</h4>
+                </div>
+                <div class="modal-body">
+                    <input name="starttime" type="hidden" value="{{startTimeClicked}}"/>
+
+                    <div class="form-group">
+                        <label class="label label-default">Type</label>
+                        <select class="form-control input input-md-4 taskTitle" id="taskTitle" name="taskTitle">
+                            <option value="">Select Event Type</option>
+                            <option value="milestone">Add Project Milestone</option>
+                            <option value="hoursworked">Log Time Worked</option>
+                        </select>
+                    </div>
+                    {{#if evttype_milestone}}
+                    <div class="form-group">
+                        <label class="label label-default">Milestone Description</label>
+                        <input type="text" class=" form-control name focus" id="name"
+                               placeholder="Enter Milestone Description" value=""><br/>
+                    </div>
+                    {{/if}}
+                    {{#if evttype_hoursworked}}
+                    <div class="form-group">
+                        <label class="label label-default">Number of Hours</label>
+                        <input type="number" class=" form-control name focus" id="name" placeholder="Enter Hours Worked"
+                               value=""><br/>
+                    </div>
+                    {{/if}}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger removeTask pull-left">Remove</button>
+                    <button type="button" class="btn btn-default closetask" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary saveTask">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

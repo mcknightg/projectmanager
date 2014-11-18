@@ -1,0 +1,16 @@
+<template name="layout">
+  {{> yield region="header"}} 
+  <div class="container-fluid bg">
+  {{#if currentUser}}
+      	<div class="row">
+       			{{>sidebar}}
+    		<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-0 push-down main">
+     			{{> yield}}      
+    		</div>
+  		</div>
+  {{else}}
+  		
+  {{/if}}
+  </div>
+  {{> yield region="footer"}}
+</template>

@@ -1,0 +1,22 @@
+<template name="todoDlg">
+    <div class="modal fade in show" id="projectImageModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="closetodo pull-right" data-dismiss="modal"
+                            aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">New Todo</h4>
+                </div>
+                <div class="modal-body">
+                    <textarea id="todoitem" placeholder="Add a Todo List Item"
+                              class="form-control todoitem noborder"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default closetodo" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary savetodo">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

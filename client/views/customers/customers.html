@@ -1,0 +1,65 @@
+<template name="customers">
+	 <ol class="breadcrumb shadowed">
+        <li>
+        	<a href="{{pathFor 'home'}}">
+        		<i class="fa fa-tachometer"></i> Home
+        	</a></li>
+        <li class="active">
+        	<i class="fa fa-university"></i> Customers
+        </li>
+      </ol>
+	 <div class="col-md-12">
+		<p>
+			<input class="customername" type="text" style="border:none;font-size:19pt;height:45px" placeholder="Add A Customer">
+		</p>
+		<hr/>
+		<h5 class="push-bottom">Customers listed by 
+		<a class="sortCustomerToggle" href="#">name</a>
+		</h5>
+		{{#each customers}}
+			{{>customer}}
+		{{/each}}
+	 </div>
+</template>
+<template name="customer">
+<div class="col-md-3">
+	<div class="shadowed panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">
+			<p class="pull-right"><i class="fa fa-lg fa-trash delcustomer"></i></p>
+			{{#if editingCustomername}}
+			<div class="row">
+			<div class="form-group">
+        		<h3><input style="width:230px;margin-left:20px;font-size:18pt;" type="text" class="form-control name noborder" id="name" placeholder="Customer Name" value="{{name}}"></h3>
+      		</div>
+      		</div>
+			{{else}}
+			<p class="editCustomerName"><h3> <a href="#">{{name}}</a></h3></p>
+			{{/if}}
+			</h3>
+		</div>
+		<div class="panel-body ">
+			{{#if editingCustomerphone}}
+			<div class="row">
+			<div class="form-group col-md-9">
+        		<input style="width:230px;margin-left:20px;font-size:10pt;" type="text" class="noborder form-control phone" id="phone" placeholder="Enter Phone Number" value="{{formatphone phone}}"><br/>
+      		</div>
+      		</div>
+			{{else}}
+            <p class="editCustomerPhone"><small><span class="text-muted">phone:</span><span> {{formatphone phone}}</span></small></p>
+			{{/if}}
+			{{#if editingCustomercontact}}
+			<div class="row">
+			<div class="form-group col-md-9">
+        		<input style="width:230px;margin-left:20px;font-size:10pt;" type="text" class="noborder form-control contact" id="contact" placeholder="Enter Contact Name" value="{{contact}}"><br/>
+      		</div>
+      		</div>
+			{{else}}
+            <p class="editCustomerContact"><small><span class="text-muted ">contact:</span><span> {{contact}}</span></small></p>
+			{{/if}}
+
+        </div>
+	</div>
+
+</div>
+</template>

@@ -1,0 +1,45 @@
+<template name="projects">
+    {{#if projectToDelete}}
+      {{>delconfirm}}
+    {{/if}}
+      <ol class="breadcrumb shadowed">
+        <li>
+          <a href="{{pathFor 'home'}}">
+            <i class="fa fa-tachometer"></i> Home
+          </a>
+        </li>
+        <li class="active">
+          <i class="fa fa-cubes"></i> Projects 
+        </li>
+      </ol>
+
+      <h1 class="page-header">    
+        <p><input id="projectNameEnter" type="text" style="border:none;font-size:19pt;height:45px" placeholder="Add A Project"></p>
+      </h1>  
+      <h5 class="push-bottom">Projects listed by <a class="sortToggle" href="#">{{sortType}}</a> </h5>
+        <div>         
+          {{#each projects}}
+            {{>project}}
+          {{else}}
+            <h4>No Projects Found</h4>
+          {{/each}}
+        </div>
+</template>
+
+<template name="project">
+<div class="col-xs-12 col-sm-12 col-md-3">
+  <div class="shadowed panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+      <p class="pull-right"><i class="fa fa-lg fa-trash deleteConfirm"></i></p>
+      <p><h5> <a href="/projects/{{_id}}">{{name}}</a><br/> Entered on {{formatdate dateentered}}</h5></p></h3>
+    </div>
+    <div class="panel-body ">
+      <small><span>Due for <a href="/customers">{{customer.name}}</a></span></small><br/>
+      <small><span> on {{formatdate datedue}}</span></small>
+    </div>
+  </div>
+</div>
+</template>
+
+

@@ -1,0 +1,12 @@
+<template name="projectActivityPanel">
+<div class="panel panel-default">
+     <div class="panel-heading">Project Activity in <a id="projectActivityDirection" href="#"><span class="label label-info">{{projectActivityDirection}}</span></a> order.
+     </div>
+     <div class="panel-body">
+         {{#each activity}}
+            {{>activityTpl}}
+         {{/each}}
+     </div>
+</div>
+
+</template>

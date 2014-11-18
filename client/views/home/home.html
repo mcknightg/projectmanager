@@ -1,0 +1,23 @@
+<template name="home">
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron text-center">
+                            <h1><img height="45px" src="/images/fifties.png"> Flutterbum</h1>
+                            <p class="lead">Project Management for the Real World.</p>
+                            <div class="container">
+                                {{>loginButtons align="center"}}
+                                {{#if currentUser}}
+                                <p class="push-down"><a class="btn btn-lg btn-success" href="{{pathFor 'projects'}}"
+                                   role="button">Go to Projects</a></p>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

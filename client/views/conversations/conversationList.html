@@ -1,0 +1,22 @@
+<template name="conversationList">
+<div class="conversations hidden-sm hidden-xs col-md-12">
+      <div class="push-down">
+        <h5 class="text-muted"><strong>Conversations</strong> | <a class="addconversation" href="#">Start a Conversation</a></h5>
+      </div>
+      <hr/>
+      <table>
+      {{#each conversations}}
+        <tr>
+          <td class="col-md-1"><!--img src="icon"/!--><i class="fa fa-folder"></i></td>
+          <td class="col-md-2">{{useremail}}</td>
+          <td class="col-md-5"><a class="shorten"  href="#">{{shorten note 45}}</a></td>
+          <td class="col-md-2"> {{formatdate dateadded}}</td>
+          <td class="col-md-1"><button class="btn btn-default btn-xs archive"><i class="fa fa-minus-square-o"></i> Archive</button></td>
+        </tr>
+        <tr>
+          <td colspan="5"><hr/></td>
+        </tr>
+      {{/each}}
+      </table>
+    </div>
+</template>
