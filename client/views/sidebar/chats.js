@@ -3,7 +3,7 @@ Template.chats.helpers({
 		return Session.get('editing_project');
 	},
 	flits:function(){
-		var flitList = Flits.find({},{sort:{date:-1},limit:8}).fetch();
+		var flitList = Flits.find({},{sort:{date:-1},limit:20}).fetch();
 		var flitArray = [];
 		for(var i = 0;i < flitList.length;i++){
 			if(flitList[i].owner){
@@ -16,6 +16,10 @@ Template.chats.helpers({
 		return flitList.reverse();
 	}
 });
+
+Template.chats.rendered = function(){
+	scrollToBottom();
+};
 Template.chats.events({
 	'keyup .flitEdit':function(evt,tmpl){
 		 if (event.which === 27 || event.which === 13) {
@@ -25,6 +29,7 @@ Template.chats.events({
              	 Meteor.call('addFlit',{date:new Date,owner:Meteor.userId(),note:ele.value});
              	ele.value = '';
              	ele.focus();
+				 scrollToBottom();
              }
             
         }
@@ -32,4 +37,7 @@ Template.chats.events({
 	'click .clearChat':function(){
 		$('.notes').html('');
 	}
-})
+});
+function scrollToBottom(){
+	$('.notes').scrollTop($('.notes')[0].scrollHeight);
+}

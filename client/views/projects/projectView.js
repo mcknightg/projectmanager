@@ -1,6 +1,4 @@
 Template.projectForm.helpers({
-    
- 
     adding_conversation: function () {
         return Session.get('adding_conversation');
     },
@@ -13,7 +11,6 @@ Template.projectForm.helpers({
     editing_calevent: function () {
         return Session.get('editing_calevent')
     }
-   
 });
 
 Template.projectForm.events({

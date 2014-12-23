@@ -37,7 +37,8 @@ div.jumbotron{
 }
 input.noborder{
 	border:none;
-
+	font-size: 19pt;
+	height: 45px;
 }
 div.main{
 	border-left: 1px solid lightgray;
@@ -47,6 +48,6 @@ div.main{
     color:white;
 }
 
-note {
+.note {
 	font-size: 13pt;
 }

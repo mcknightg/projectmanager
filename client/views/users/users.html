@@ -1,0 +1,34 @@
+<template name="roles">
+    <div class="col-md-12">
+        <div class="panel panel-default push-down">
+            <div class="panel-heading">
+                <h1 class="panel-title">Role Management</h1>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <th>UserName</th>
+                        <th>View Projects</th>
+                        <th>Edit Projects</th>
+                        <th>View Customers</th>
+                        <th>Edit Customers</th>
+                    </thead>
+                    <tbody>
+                    {{#each userList}}
+                        <tr>
+                            <td>{{username}}</td>
+                            <td><input checked="{{checkRole _id 'view-projects'}}" type="checkbox"/></td>
+                            <td><input checked="{{checkRole _id 'edit-projects'}}" type="checkbox"/></td>
+                            <td><input checked="{{checkRole _id 'view-customers'}}" type="checkbox"/></td>
+                            <td><input checked="{{checkRole _id 'edit-customers'}}" type="checkbox"/></td>
+                        </tr>
+
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</template>

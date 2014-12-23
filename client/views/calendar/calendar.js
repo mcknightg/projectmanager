@@ -25,7 +25,15 @@ Template.calendar.rendered = function () {
             var events = [];
             var calEvents = CalEvents.find({projectId:Session.get('active_project')},{reactive:false});
             calEvents.forEach(function(evt){
-                var event = {id:evt._id,title:evt.title,start:evt.start,end:evt.end,color:evt.color,type:evt.type};
+                var event =
+                {
+                    id:evt._id,
+                    title:evt.title,
+                    start:evt.start,
+                    end:evt.end,
+                    color:evt.color,
+                    type:evt.type
+                };
                 events.push(event);
             });
             callback(events);
@@ -39,7 +47,10 @@ Template.calendar.rendered = function () {
                 icon = 'fa-cog';
                 addtltext = ' Hours Worked';
             }
-            ele.html('<div style="background-color:' + bkgrd + ';color:white"><i class="fa '+icon+'"></i> ' + evt.title + addtltext + ' </div>');
+            var html = '<div style="background-color:' + bkgrd;
+            html += ';color:white"><i class="fa '+icon+'"></i> ';
+            html += evt.title + addtltext + ' </div>';
+            ele.html(html);
         },
         header: {
             left: 'title',

@@ -1,0 +1,32 @@
+<template name="uploads">
+    <div class="panel panel-default push-down">
+        <div class="panel-heading">Project Uploads
+        </div>
+        <div class="panel-body">
+            Add Files &nbsp;
+            <span class="btn btn-default btn-file">Browse
+                <input multiple class="myFileInput file" type="file">
+            </span>
+
+            <div class="push-down col-md-9">
+                <table class="col-md-9 table table-hover table-striped push-down table-bordered">
+                    <thead>
+                    <th>Name</th>
+                    <th>Download</th>
+                    </thead>
+                    {{#each uploads}}
+                        <tbody>
+                        <tr>
+                            <td>{{name}}</td>
+                            <td><a target="_blank" href="{{url download=true}}"
+                                   class="btn btn-primary">Download</a></td>
+                        </tr>
+                        </tbody>
+                    {{/each}}
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</template>

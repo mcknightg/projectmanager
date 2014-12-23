@@ -9,9 +9,9 @@ body {
     margin: 0 auto;
     float: none;
 }
-div.jumbotron{
+div.loginscreen{
   border-radius: 10px;
-  box-shadow: 10px 10px 12px #888888;
+  box-shadow: 5px 8px 5px #232323;
   height:380px;
 }
 
@@ -19,22 +19,35 @@ div.jumbotron{
     margin-right: auto;
     margin-left: auto;
 }
+.login-form label{
+   text-align: left;
+}
+#login-buttons .login-button, .accounts-dialog .login-button
+#password{
+    background: #bf3e11;
+}
+#login-buttons-password:hover{
+    background: #bf3e11;
+}
 .site-wrapper {
     text-align: center;
     color: #fff;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    background-color: #dadad4;
     display: table;
     width: 100%;
     height: 100%; /* For at least Firefox */
     min-height: 100%;
-    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.9);
+    box-shadow: inset 0 0 100px rgba(0,0,0,.9);
 }
 .site-wrapper-inner {
     display: table-cell;
     vertical-align: top;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+    text-shadow: 0 1px 2px rgba(0,0,0,.9);
 
+}
+#registerBtn{
+    margin-top:10px;
 }
 @media (min-width: 992px) {
   .cover-container {

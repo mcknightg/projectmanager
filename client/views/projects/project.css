@@ -1,14 +1,17 @@
 
-.completetrue{
+.completetrue {
     text-decoration: line-through;
-    color:lightgrey;
+    color: lightgrey;
 }
-.completetrue a{
-    color:lightgrey;
+
+.completetrue a {
+    color: lightgrey;
 }
-.nav-sidebar{
+
+.nav-sidebar {
     font-size: 10pt;
 }
-.push-down{
-	margin-top:25px;
+
+.push-down {
+    margin-top: 25px;
 }

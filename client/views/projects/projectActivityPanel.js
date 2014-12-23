@@ -1,21 +1,22 @@
 Template.projectActivityPanel.helpers({
-	 activity:function(){
+    activity: function () {
         var sort = -1;
-        if(!Session.get('projectActivityAscending')){
-          sort = 1;
+        if (!Session.get('projectActivityAscending')) {
+            sort = 1;
         }
-        return CalEvents.find({projectId:Session.get('active_project')},{reactive:true,sort:{start:sort}});
+        return CalEvents.find({projectId: Session.get('active_project')},
+            {reactive: true, sort: {start: sort}});
     },
-    projectActivityDirection:function(){
-        if(Session.get('projectActivityAscending')){
+    projectActivityDirection: function () {
+        if (Session.get('projectActivityAscending')) {
             return 'Descending';
-        } else{
+        } else {
             return 'Ascending';
         }
     }
 });
 Template.projectActivityPanel.events({
-	'click #projectActivityDirection':function(evt,tmpl){
-        Session.set('projectActivityAscending',!Session.get('projectActivityAscending'));
+    'click #projectActivityDirection': function (evt, tmpl) {
+        Session.set('projectActivityAscending', !Session.get('projectActivityAscending'));
     }
-})
+});

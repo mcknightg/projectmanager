@@ -12,7 +12,7 @@ Template.archives.helpers({
 Template.archives.events({
     'click .unarchiveProject':function(evt,tmpl){
         console.log(this.archived);
-        Meteor.call('archiveProject',!this._id,this.archived);
+        Meteor.call('archiveProject',this._id,!this.archived);
     },
     'click .unarchiveConversation':function(evt,tmpl){
         Meteor.call('archiveConversation',this._id,!this.archived);
@@ -21,8 +21,6 @@ Template.archives.events({
         console.log(this.archived);
         Meteor.call('archiveTodo',this._id,!this.archived);
     }
-
-
 });
 Template.archives.rendered= function(){
 

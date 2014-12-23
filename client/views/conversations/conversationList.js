@@ -1,12 +1,14 @@
 Template.conversationList.helpers({
     conversations:function(){
-        return Conversations.find({archived: {$ne: true}},{sort:{dateadded:-1},limit:Session.get('convlimit')|| 3});
+        return Conversations.find(
+			{archived: {$ne: true}},
+			{sort:{dateadded:-1}, limit:Session.get('convlimit')|| 3}
+		);
     },
     convlimit:function(){
     	return Session.get('convlimit') || 3;
     },
     useremail:function(){
-
         return this.username;
     }
 });

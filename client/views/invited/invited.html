@@ -1,0 +1,25 @@
+<template name="invited">
+    <div class="push-down">
+        <h5 class="text-muted"><strong>Project Team</strong> | Invite
+            <select name="userToInvite" id="userToInvite">
+                {{#each userList}}
+                <option value="{{_id}}">{{username}}</option>
+                {{/each}}
+            </select>
+            <i class="fa fa-plus inviteUser"></i>
+        </h5>
+        <hr/>
+        <table>
+            {{#each invited}}
+                <tr >
+                    <td width="250px">{{username}}</td>
+                    <td>&nbsp;{{#if isowner ..}}<i class="fa fa-trash removeUser"></i>{{/if}} </td>
+                </tr>
+
+                <tr>
+                    <td colspan="5"><hr/></td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+</template>

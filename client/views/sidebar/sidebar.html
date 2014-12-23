@@ -1,6 +1,6 @@
 <template name="sidebar">
-<div class="col-sm-1 col-md-2 col-lg-2 col-xl-1 sidebar hidden-xs hidden-sm" id="sidebar" 
-role="navigation">
+<div class="col-sm-1 col-md-2 col-lg-2 col-xl-1 sidebar
+hidden-xs hidden-sm" id="sidebar" role="navigation">
   <ul class="nav nav-sidebar">
     <li>
       <a href="{{pathFor 'projects'}}">
@@ -8,14 +8,20 @@ role="navigation">
       </a>
     </li>
   	<li>
+
       <a href="{{pathFor 'customers'}}">
         <i class="fa fa-university"></i> Customers
       </a>
     </li>
-  {{#if isAdmin}}
+  {{#if isInRole 'admin'}}
   	<li>
       <a href="{{pathFor 'archives'}}">
         <i class="fa fa-database"></i> Archives
+      </a>
+    </li>
+      <li>
+      <a href="{{pathFor 'roles'}}">
+        <i class="fa fa-users"></i> Roles
       </a>
     </li>
   {{/if}}

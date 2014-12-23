@@ -1,23 +1,70 @@
 <template name="home">
+    {{#if currentUser}}
+        <!-- Jumbotron -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1><img height="45px" src="/images/fifties.png"> Flutterbum</h1>
+            <p class="lead">Project Management for the real world.</p>
+            <p><a class="btn btn-lg btn-success" href="{{pathFor 'projects'}}" role="button">My Projects</a></p>
+        </div>
+
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-lg-4">
+                <h2><i class="fa fa-users"></i> Team Building</h2>
+                <p>Invite your project team to collaborate on your project.  They will automatically see your project once they've been invited.</p>
+            </div>
+            <div class="col-lg-4">
+                <h2><i class="fa fa-twitch"></i> Store Conversations</h2>
+                <p>Any comments or remarks made on a specific project will be stored with the project. </p>
+            </div>
+            <div class="col-lg-4">
+                <h2><i class="fa fa-inbox"></i> Store Todo Lists</h2>
+                <p>Each project can maintain it's own To Do list, so everyone knows what has already been done. Completed items can be checked, and greyed out to indicate that it's completed, or archived to remove it from the list.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h2><i class="fa fa-upload"></i> Upload Files</h2>
+                <p>Invite your project team to collaborate on your project.  They will automatically see your project once they've been invited.</p>
+            </div>
+            <div class="col-lg-4">
+                <h2><i class="fa fa-comments-o"></i> Live Chat</h2>
+                <p>You can chat with anyone online, to bounce ideas off your colleagues.</p>
+            </div>
+            <div class="col-lg-4">
+                <h2><i class="fa fa-calendar"></i> Inline Calendar</h2>
+                <p>The inline calendar makes it easy to see your milestones, record time worked, and navigate through the days of the week/month/year..</p>
+            </div>
+           <div class="col-lg-4">
+                <h2><i class="fa fa-download"></i> Download Files</h2>
+                <p>Any files which were uploaded to a project, can be downloaded from the same place.</p>
+            </div>
+        </div>
+    </div>
+
+    {{else}}
     <div class="site-wrapper">
         <div class="site-wrapper-inner">
             <div class="cover-container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="jumbotron text-center">
+
+                        <div class="jumbotron loginscreen text-center">
                             <h1><img height="45px" src="/images/fifties.png"> Flutterbum</h1>
                             <p class="lead">Project Management for the Real World.</p>
                             <div class="container">
-                                {{>loginButtons align="center"}}
-                                {{#if currentUser}}
-                                <p class="push-down"><a class="btn btn-lg btn-success" href="{{pathFor 'projects'}}"
-                                   role="button">Go to Projects</a></p>
-                                {{/if}}
+
+
+                                    {{>loginButtons align="left"}}
+
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    {{/if}}
 </template>

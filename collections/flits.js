@@ -1,0 +1,1 @@
+Flits = new Mongo.Collection('flits');
